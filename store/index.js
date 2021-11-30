@@ -28,4 +28,18 @@ const makeStore = ( initialState, options ) => {
     return store;
 }
 
+function handleChange() {
+  let previousValue = currentValue
+  currentValue = select(store.getState())
+
+  if (previousValue !== currentValue) {
+    console.log(
+      'Some deep nested property changed from',
+      previousValue,
+      'to',
+      currentValue
+    )
+  }
+}
+
 export default makeStore;
