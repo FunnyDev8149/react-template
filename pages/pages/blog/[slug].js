@@ -49,37 +49,33 @@ function Single () {
 
             <div className={ `container skeleton-body skel-shop-products ${loading ? '' : 'loaded'}` }>
                 <div className="row">
-                    <div className="col-lg-9">
-                        <BlogSingle blog={ blog } loading={ loading } />
+                    <BlogSingle blog={ blog } loading={ loading } />
 
-                        {
-                            !loading && !related.length ?
-                                ''
-                                :
-                                <>
-                                    <hr className="mt-2 mb-1" />
+                    {
+                        !loading && !related.length ?
+                            ''
+                            :
+                            <>
+                                <hr className="mt-2 mb-1" />
 
-                                    <div className="related-posts">
-                                        <h4>Related <strong>Posts</strong></h4>
+                                <div className="related-posts">
+                                    <h4>Related <strong>Posts</strong></h4>
 
-                                        <OwlCarousel adClass="related-posts-carousel" options={ blogSlider }>
-                                            {
-                                                loading ?
-                                                    new Array( 3 ).fill( 1 ).map( ( item, index ) => (
-                                                        <div className="skel-pro skel-pro-grid" key={ "Skeleton:" + index }></div>
-                                                    ) )
-                                                    :
-                                                    related.map( ( blog, index ) => (
-                                                        <BlogTypeThree blog={ blog } key={ "BlogTypeThree" + index } />
-                                                    ) )
-                                            }
-                                        </OwlCarousel>
-                                    </div>
-                                </>
-                        }
-                    </div>
-
-                    <BlogSidebar />
+                                    <OwlCarousel adClass="related-posts-carousel" options={ blogSlider }>
+                                        {
+                                            loading ?
+                                                new Array( 3 ).fill( 1 ).map( ( item, index ) => (
+                                                    <div className="skel-pro skel-pro-grid" key={ "Skeleton:" + index }></div>
+                                                ) )
+                                                :
+                                                related.map( ( blog, index ) => (
+                                                    <BlogTypeThree blog={ blog } key={ "BlogTypeThree" + index } />
+                                                ) )
+                                        }
+                                    </OwlCarousel>
+                                </div>
+                            </>
+                    }
                 </div>
             </div>
         </main >
