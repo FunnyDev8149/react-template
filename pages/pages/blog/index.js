@@ -86,7 +86,6 @@ function Blog () {
                             </div>
                         </div>
 
-                        <BlogSidebar />
                     </div>
                 </div>
             </main>
